@@ -1,0 +1,128 @@
+{% load static %}
+{% block content %}
+
+ <!-- Navbar Start -->
+ <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+    <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        <h1 class="m-0">Crowdfunding</h1>
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+            <a href="/projectlist" class="nav-item nav-link">Home</a>
+            <a href="/about/" class="nav-item nav-link">About</a>
+            <a href="/contact/" class="nav-item nav-link">Contact</a>
+            <a href="/category" class="nav-item nav-link active">Category</a>
+            <a href="/logout" class="nav-item nav-link">Logout</a>
+        </div>
+    </div>
+</nav>
+<!-- Navbar End -->
+        <!-- End Header Area -->
+
+
+
+        <script src="/static/js/vendor/jquery-2.2.4.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        <script src="/static/js/vendor/bootstrap.min.js"></script>
+        <script src="/static/js/jquery.ajaxchimp.min.js"></script>
+        <script src="/static/js/jquery.nice-select.min.js"></script>
+        <script src="/static/js/jquery.sticky.js"></script>
+        <script src="/static/js/parallax.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="/static/js/jquery.magnific-popup.min.js"></script>
+        <script src="/static/js/main.js"></script>
+
+    </body>
+</html>
+{% endblock %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Show projects</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">  
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="/static/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/static/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/static/css/bootstrapservice.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="/static/css/styleservice.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Projects Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                <p class="fs-5 fw-bold text-primary">Categories</p>
+                <h1 class="display-5 mb-5">Select a category to view projects</h1>
+            </div>
+            <div class="row wow fadeInUp" data-wow-delay="0.3s">
+                <div class="col-12 text-center">
+                    <ul class="list-inline rounded mb-5" id="portfolio-flters">
+                        <li class="mx-2 active" data-filter="*">All</li>
+                   
+                       
+                    </ul>
+                </div>
+            </div>
+            <div class="row g-4 portfolio-container">
+                {% for i in cat %}
+                <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="portfolio-inner rounded">
+                        <img class="img-fluid" src="/static/img/s1.jpg" alt="">
+                        <div class="portfolio-text">
+                            <h4 class="text-white mb-4">{{ i.name }}</h4>
+                            <h5 class="text-white mb-4">{{ i.description }}</h5>
+                         
+                            <a href="/projectshow?id={{i.id}}"><button class="glow-on-hover" type="button" style="font-size: 16px;">View</button></a><br>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+              </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/lib/wow/wow.min.js"></script>
+    <script src="/static/lib/easing/easing.min.js"></script>
+    <script src="/static/lib/waypoints/waypoints.min.js"></script>
+    <script src="/static/lib/owlcarousel/owl.carousel.min.js.js"></script>
+    <script src="/static/lib/counterup/counterup.min.js"></script>
+    <script src="/static/lib/parallax/parallax.min.js.js"></script>
+    <script src="/static/lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="/static/lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="/static/js/mainservice.js"></script>
+</body>
+
+</html>

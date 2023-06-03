@@ -1,0 +1,127 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payment Page</title>
+  <style>
+    body {
+      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      margin-top: 50px;
+    }
+
+    .payment-info {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .payment-info h1 {
+      color: #333;
+      font-size: 24px;
+      margin: 0;
+    }
+
+    .payment-info p {
+      color: #666;
+      font-size: 16px;
+    }
+
+    .payment-options {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .payment-option {
+      margin: 0 10px;
+    }
+
+    .payment-option img {
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+
+    .payment-option img:hover {
+      opacity: 0.7;
+    }
+
+    .payment-amount {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .payment-amount h2 {
+      color: #333;
+      font-size: 20px;
+      margin: 0;
+    }
+
+    .payment-amount p {
+      color: #666;
+      font-size: 16px;
+      margin: 10px 0;
+    }
+
+    .payment-button {
+      text-align: center;
+    }
+
+    .payment-button button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .payment-button button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="payment-info">
+      <h1>Payment Page</h1>
+      <p>Please select a payment method.</p>
+    </div>
+
+    <div class="payment-options">
+      <div class="payment-option">
+        <img src="{% static 'img/credit.png' %}" alt="Credit Card">
+      </div>
+      <div class="payment-option">
+        <img src="{% static 'img/paypal.jpeg' %}" alt="PayPal">
+      </div>
+      <div class="payment-option">
+        <img src="{% static 'img/bitcoin.jpeg' %}" alt="Bitcoin">
+      </div>
+    </div>
+
+    <div class="payment-amount">
+      <h2>Payment Amount</h2>
+      <p>${{n.amount}}</p>
+    </div>
+
+    <div class="payment-button">
+      <a href="/projectlist/"><button type="button">Pay Now</button></a>
+    </div>
+  </div>
+</body>
+</html>

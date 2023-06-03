@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.2/dist/css/bootstrap.min.css">
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Contributor Name</th>
+      <th>Amount contributed</th>
+      <th>Amount Needed</th>
+     
+      <th>Contributed at </th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for contribution in contributions %}
+      <tr>
+        <td>{{ contribution.project.title }}</td>
+        <td>{{ contribution.contributor_name }}</td>
+        <td>{{ contribution.amount }}</td>
+        <td>{{ contribution.project.amount }}</td>
+        
+        <td>{{ contribution.timestamp }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.2/dist/js/bootstrap.bundle.min.js"></script>
